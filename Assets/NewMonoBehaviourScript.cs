@@ -8,7 +8,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void FloatToint()
     {
         intValue=(int)FloatValue;
-
+ㅇㅇ
 
     }
 
