@@ -2,17 +2,23 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    
-    bool aaaa = true;
-    bool bbbb = false;
+    int intValue;
 
-    
-    ㅇㅇㅇㅇㅇㅇㅇ
-    
-    
+    float FloatValue = 10.5f;
+
+    void FloatToint()
+    {
+        intValue=(int)FloatValue;
+
+
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        FloatToint();
+
+        print(intValue);
         
     }
 
