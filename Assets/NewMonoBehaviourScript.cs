@@ -3,29 +3,22 @@ using UnityEngine;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
 
-    // 1+1=2
-    // 숫자 1 - 상수
+int x = 100;
+int y = 100;
 
-    // 1+x=랜덤
-    // 숫자 1 - 상수
-    // x - 변수
-    int x = 100; 
+int sum;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-     print(x);
+     sum = x + y; 
+     
+     print(sum);  //->정답은 200입니다.
 
-    x= -500;
-     print(x);
+    print(-sum); //->정답은 -200입니다.
 
-    x = x-500;
-     print(x);
-
-        x = x+1000;
-        print(x);
-
+  
     }
 
     // Update is called once per frame
