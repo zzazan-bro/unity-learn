@@ -16,3 +16,8 @@ UserSettings/
 *.fbx
 Packages/
 ProjectSettings/
+*.csproj
+*.slnx
+*.sln
+*.inputactions
+.vscode/
