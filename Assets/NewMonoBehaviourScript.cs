@@ -9,17 +9,19 @@ int IntValue;
 float FloatValue = 10.5f;
 float FloatValue2 = 20.5f;
 
-void FloatToint(float _parameter , float _parameter2)
+int FloatToint(float _parameter , float _parameter2)
 {
-
-IntValue =(int)(_parameter + _parameter2);
- print(IntValue);
+ return Multiply((int)(_parameter + _parameter2));
 }
 
+int Multiply(int _parameter)
+    {
+        return _parameter * _parameter;
+    }
         void Start()
     {
     
-        FloatToint(FloatValue,FloatValue2);
+       print(FloatToint(FloatValue,FloatValue2));
     
             
    
