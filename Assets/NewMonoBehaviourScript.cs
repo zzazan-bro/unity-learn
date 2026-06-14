@@ -1,28 +1,37 @@
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
+
+public class test2
+{
+     private int a = 5;
+    public int b = 5;
+
+public void abc()
+    {
+        
+    }
+private void abc2()
+    {
+        
+    }
+
+}
 public class NewMonoBehaviourScript : MonoBehaviour
 {
 
-int IntValue;
-
-float FloatValue = 10.5f;
-float FloatValue2 = 20.5f;
-
-int FloatToint(float _parameter , float _parameter2)
-{
- return Multiply((int)(_parameter + _parameter2));
-}
-
-int Multiply(int _parameter)
+   test2 aaa;
+   
+   void abc()
     {
-        return _parameter * _parameter;
+        aaa.b=5;
+        aaa.abc();
+        aaa.abc2();
     }
+
         void Start()
     {
-    
-       print(FloatToint(FloatValue,FloatValue2));
-    
+
             
    
 
