@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -6,19 +7,22 @@ public class NewMonoBehaviourScript : MonoBehaviour
 int IntValue;
 
 float FloatValue = 10.5f;
+float FloatValue2 = 20.5f;
 
-void FloatToint()
+void FloatToint(float _parameter)
 {
 
-IntValue =(int)FloatValue;
-
+IntValue =(int)_parameter;
+ print(IntValue);
 }
 
         void Start()
     {
     
-        FloatToint();
-    print(IntValue);
+        FloatToint(FloatValue);
+        FloatToint(FloatValue2);
+            
+   
 
 
     }
