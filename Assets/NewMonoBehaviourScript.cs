@@ -4,35 +4,55 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class NewMonoBehaviourScript : MonoBehaviour 
 {
 
-    int intvalue;
-    float floatvalue =10.5f;
-    float floatvalue2 =20.5f;
+    int input = 11;
+    int num = 10;
+    bool result;
 
-    void FloatToint(float _parameter, float _parameter2 , string _stringparm = "디폴트값" ) // 1.void는 함수만들기전에 들어가는 선언문(리턴값이 없음) , _parameter는 매개변수라는 뜻 ->
-    //FLoatToint() 만 해도 함수가 완성되긴하지만, 매개변수(parameter)를 설정해주면 , (퍼블릭클래스에서 선언한)변수가 두개이상일때 보이드스타트 아래에 함수이름(변수이름) 만 설정해도
-    //프린트됨 , 물론 실수형말고 string_stringParm처럼 변수의 자료형을 텍스트형태로도 인풋할 수 있음
-    //디폴트값은 첫변수에는 못하고 무조건 뒤에와야함 -> 그래야 오류없이 적용됨
-    {
-        intvalue =(int)(_parameter + _parameter2);
-        print(intvalue);
-        print(_stringparm);
-    }
-
-     int FloatToint(float _ parameter , float _parameter2)
-    {
-        return (int)(_parameter + _parameter2);
-    }
-     //void가 아니라 int해놓고 함수만들면 무조건 return을 끝에 적어서 반환값설정해줘야함
+  //switch 조건문 -> switch선언 (변수) 아래줄 케이스 : -> 세미콜론 아니고, 콜론붙이고 아랫줄에 프린트값적고 아랫줄에 break로 탈출하기
+  //if문의 else 대신에 defalut:를 사용함
+  //if 조건문 -> if선언 (변수 조건연산자 [==, > , < !=등]) 아랫줄에 프린트() 효율적으로 하기위해 if를 난사하지말고 else if로 다음조건을 적으면 조건에 맞을때까지만 연산함
+  //모두 if로한다면 맞아도 끝까지 if에 해당하는게있는지 연산하므로 비효율적임
+  
+  //3항 연산자 temp = 변수 조건연산자 변수 ? 트루출력값 : 폴스출력값 ; 
+  // 변수와 변수 비교했을때 ?뒤 트루일경우 첫번째값  : 폴스일경우 두번째 값 출력
         void Start()
     {
-      FloatToint(floatvalue , floatvalue2 , "12312");
-    
+
+        int temp = input == num ? 50: 100;
+
+    switch (input)
+{
+    case 10:
+        print("intput의 값이 10입니다");
+        break;
+    case 11:
+        print("intput의 값이 11입니다");
+        break;
+    case 12:
+        print("input의 값이 12입니다");
+        break;
+    default:
+        print("그 외의 경우");
+        break;
+}
+
+        if(input == 10)
+            print("intput의 값이 10입니다");
+             else if(input == 11)
+            print("intput의 값이 11입니다");
+             else if(input == 12)
+            print("intput의 값이 12입니다");
+             else if(input == 13)
+            print("intput의 값이 13입니다");
+
+            else
+            print("그 외의 경우");
+            
+
       
-
-
 
 
     }
