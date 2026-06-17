@@ -4,58 +4,45 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public enum Item // 넣고싶은 값만 고를 수 있게 만드는 타입 (선택지로 이해)
-{
-    weapon,
-    shield,
-    potion,
-
-
-}
-
-public struct Youtube //구버전 a값을 직접 지정할수없어 스트럭트로 설계하고 클래스에서 함수식이나 a를직접불러와서 값을 넣어줘야함
-{
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    
-    public Youtube(int _a, int _b ,int _c, int _d ) // 생성자 형식
-    {
-        a = _a; b= _b; c= _c; d= _d;
-    }
-
-public void GetA(int value)
-    {
-        a = value;
-    }
-
-}
-
 public class NewMonoBehaviourScript : MonoBehaviour 
 {
-   Item item;
-Youtube keidy; //유튜브 스트럭트 설계도를 불러와서 keidy라는 이름의 변수상자를 만듦(뒤에 =new Youtube(); 이거는 스트럭트에서 가져온거라 알아서실행됨, 만약 class였다면
-//적어줘야함!
+    public static event ChainFucntion Onstart; // 이거는 타클래스 (다른 test2라는 c#스크립트를 만들고 거기에있는 함수도불러올수있음)
+    public delegate void ChainFunction(int value); // 델리게이트 는 클래스랑비슷한 기능, 체인펑션이라는 이름의 클래스생성 
+    // -> 함수여러개 넣어주는 공간임(hp,민첩등 다른변수도 chain한번에관리가능)
+    ChainFunction chain; // 체인펑션에 체인이라는 이름의 변수 할당
 
-Youtube keid = new Youtube(1,2,3,4); // 생성자 만든 스트럭트 변수들에 값 지정해주는 방법
-Youtube keid2 = new Youtube(5,6,7,8);
-        void Start()
-    { keidy.a=5;
-    keidy.GetA(5);
+    int power;
+   int defence;
 
-    
-    item = Item.weapon;
-    item = Item.shield;
-
-      print(item); // 마지막에 적은 shield가 프린트됨 but // ex)) item=Item.acs; ->로 적게되면 Item 에 선택지로 acs가없으므로 오류발생
-
-
+   public void SetPower(int value)
+    {
+        power += value;
+        print("power의 값이" +value+ "만큼 증가했습니다 . 총 power의 값 =" + power);
     }
+   public void SetDefence(int value)
+    {
+        defence += value;
+        print("defence의 값이" +value+ "만큼 증가했습니다 . 총 defence의 값 =" + defence);
+    }
+
+    void Start()
+    {
+      
+
+chain+= SetPower; //- 체인이라는 이름변수에 셋파워 함수추가
+chain += SetDefence; //- 체인이라는 이름변수에 셋디펜스 함수 추가
+
+chain-= SetDefence; // - 체인이라는 이름변수에 셋디펜스 함수 제거 -> 이러면 파워값만 프린트됨
+    if(chain != null) // - 체인에 어떠한 함수도 없지않을경우(값이있을경우에만) 실행 -> 오류방지 조건문임
+chain(5); // - 함수에 5넣어서 실행
+    }
+
    
+    private void OnDisabel() // 게임이 꺼지면 온스타트에 5넣기
+    {
+        OnStart(5);
+    }
 
-
-    // Update is called once per frame
     void Update()
     {
         
