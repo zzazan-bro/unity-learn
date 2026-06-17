@@ -7,53 +7,41 @@ using System.Collections.Generic;
 public class NewMonoBehaviourScript : MonoBehaviour 
 {
 
-    int input = 11;
-    int num = 10;
-    bool result;
-
-  //switch 조건문 -> switch선언 (변수) 아래줄 케이스 : -> 세미콜론 아니고, 콜론붙이고 아랫줄에 프린트값적고 아랫줄에 break로 탈출하기
-  //if문의 else 대신에 defalut:를 사용함
-  //if 조건문 -> if선언 (변수 조건연산자 [==, > , < !=등]) 아랫줄에 프린트() 효율적으로 하기위해 if를 난사하지말고 else if로 다음조건을 적으면 조건에 맞을때까지만 연산함
-  //모두 if로한다면 맞아도 끝까지 if에 해당하는게있는지 연산하므로 비효율적임
-  
-  //3항 연산자 temp = 변수 조건연산자 변수 ? 트루출력값 : 폴스출력값 ; 
-  // 변수와 변수 비교했을때 ?뒤 트루일경우 첫번째값  : 폴스일경우 두번째 값 출력
+    int num = 0; // -> 1항 규칙 대채식 표기값 이미 할당했음 넘은 0으로
         void Start()
     {
+        for(int i = 0; i <10; i++)
+        {
+             num =i;
+            print(num);
+           
+        }
 
-        int temp = input == num ? 50: 100;
+      //  print(num++); -> for(타입선언 변수이름 = 0-> 0부터 ; i<10 -> i가 10보다 작을때까지반복함 i++->자신에게 계속 1을 더함 * 1항과 2항 3항은 필수아님)
+        //print(num++); 이렇게 10번 반복할거를 그냥 for반복문 한줄로 끝낼수있음
+       // print(num++); 필수아닐때 작성법
+       // for( ; ; )
+       //{ if(num>=10)
+       //   break;-> 위 두줄은 2항 규칙 대채식 넘이 10보다같거나 크면 반복문or조건문 빠져나가기
+       //print(num;)
+       //   num +=2; -> 3항 규칙대체식}
+       // print(num++);
 
-    switch (input)
-{
-    case 10:
-        print("intput의 값이 10입니다");
-        break;
-    case 11:
-        print("intput의 값이 11입니다");
-        break;
-    case 12:
-        print("input의 값이 12입니다");
-        break;
-    default:
-        print("그 외의 경우");
-        break;
-}
+    }
+    void Strat()
+    {
+        
+        for( ; ; )
 
-        if(input == 10)
-            print("intput의 값이 10입니다");
-             else if(input == 11)
-            print("intput의 값이 11입니다");
-             else if(input == 12)
-            print("intput의 값이 12입니다");
-             else if(input == 13)
-            print("intput의 값이 13입니다");
+        num++
 
-            else
-            print("그 외의 경우");
-            
+        if(num % 2 ==0)
+        continue; // 해당 회차를 끝냄.
 
-      
+        pirnt(num);
 
+        if (num >10)
+        break; // 첫번째 반복문 또는 조건문 탈출
 
     }
 
